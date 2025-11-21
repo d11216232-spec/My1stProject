@@ -1,0 +1,20 @@
+```python
+import unittest
+
+class TestSafeDivision(unittest.TestCase):
+    def test_normal(self):
+        self.assertEqual(safe_division(10, 2), 5)
+        self.assertEqual(safe_division(-6, 3), -2)
+        self.assertEqual(safe_division(4.5, 1.5), 3.0)
+
+    def test_divide_by_zero(self):
+        self.assertEqual(safe_division(10, 0), "錯誤：除數不可為零")
+        self.assertEqual(safe_division(0, 0), "錯誤：除數不可為零")
+
+    def test_edge_cases(self):
+        self.assertEqual(safe_division(0, 1), 0)
+        self.assertEqual(safe_division(-7, -1), 7)
+
+if __name__ == "__main__":
+    unittest.main()
+```
